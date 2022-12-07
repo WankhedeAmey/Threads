@@ -3,6 +3,7 @@
 #include<pthread.h> //work with posix threads
 #include <unistd.h> //for pause() & sleep()
 
+//threads 
 
 //thread callback must have following prototypes
 // void *(*thread_fn)(void *)
