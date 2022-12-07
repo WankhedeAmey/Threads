@@ -8,8 +8,7 @@
 //global array -> shared resource
 int arr[]={1,2,3,4,5};
 
-//implement callback functions
-
+//implement a callback functions
 static void *thread_fn_callback_sum(void *arg){
     int i;
     int sum;
@@ -30,7 +29,7 @@ static void *thread_fn_callback_sum(void *arg){
 static void *thread_fn_callback_swap(void *arg){
     int temp;
     int arr_size=sizeof(arr)/sizeof(int);
-
+    //this is the critical section(below)
     do{
         //write operation, thread which is handling this can preempt in b/w any instruction & depending on that, diff array would be produced
         temp=arr[0];
@@ -47,6 +46,7 @@ void sum_thread_create(){
         printf("error, thread couldn't be created errno = %d\n",rc);
         exit(0);
     }
+    else printf("thread is created.\n");
 }
 
 void swap_thread_create(){
