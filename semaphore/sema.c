@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <stdbool.h>
 #include "sema.h"
-
+//1.1init a new semaaphore
 sema_t * sema_get_new_semaphore() {
 
     sema_t *sema = calloc(1, sizeof(sema_t));
